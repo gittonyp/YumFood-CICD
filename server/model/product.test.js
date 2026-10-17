@@ -51,7 +51,7 @@ afterAll(async () => {
  * Product model
  */
 describe("Product model", () => {
-  it("create & save product successfully", async (done) => {
+  it("create & save product successfully", async () => {
     const validProduct = new Product(productData);
     const savedProduct = await validProduct.save();
 
@@ -62,7 +62,6 @@ describe("Product model", () => {
     expect(savedProduct.description).toBe(productData.description);
     expect(savedProduct.rating).toBeDefined();
     expect(savedProduct.numReviews).toBeDefined();
-    done();
   });
 
   // You shouldn't be able to add in any field that isn't defined in the schema
@@ -94,7 +93,7 @@ describe("Product model", () => {
 
   // Add user review
   describe("Add user review", () => {
-    it("should create and add review to product successfully", async (done) => {
+    it("should create and add review to product successfully", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -110,11 +109,9 @@ describe("Product model", () => {
       const savedProduct = await validProduct.save();
       expect(savedProduct.numReviews).toBe(1);
       expect(savedProduct.rating).toBe(review.rating);
-
-      done();
     });
 
-    it("should create, add review and get right rating of product successfully", async (done) => {
+    it("should create, add review and get right rating of product successfully", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -153,11 +150,9 @@ describe("Product model", () => {
       const savedProduct = await validProduct.save();
       expect(savedProduct.numReviews).toBe(3);
       expect(savedProduct.rating).toBe(4);
-
-      done();
     });
 
-    it("should return error for duplicate user in product review", async (done) => {
+    it("should return error for duplicate user in product review", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -188,14 +183,12 @@ describe("Product model", () => {
       }
       expect(err).toBeInstanceOf(CustomException);
       expect(err.message).toBeDefined();
-
-      done();
     });
   });
 
   // Edit user review
   describe("Edit product review", () => {
-    it("should edit product review successfully", async (done) => {
+    it("should edit product review successfully", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -218,11 +211,9 @@ describe("Product model", () => {
       const savedProduct = await validProduct.save();
       expect(savedProduct.rating).toBe(review.rating);
       expect(savedProduct.reviews[0].rating).toBe(review.rating);
-
-      done();
     });
 
-    it("should find and edit product review in array of reviews successfully", async (done) => {
+    it("should find and edit product review in array of reviews successfully", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -249,11 +240,9 @@ describe("Product model", () => {
       await validProduct.editReview({ ...review, rating: 5 });
       const savedProduct = await validProduct.save();
       expect(savedProduct.rating).toBe(4);
-
-      done();
     });
 
-    it("should throw an error for user not found when editing review", async (done) => {
+    it("should throw an error for user not found when editing review", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -288,14 +277,12 @@ describe("Product model", () => {
       const savedProduct = await validProduct.save();
       expect(savedProduct.rating).toBe(oldReview.rating);
       expect(savedProduct.reviews[0].rating).toBe(oldReview.rating);
-
-      done();
     });
   });
 
   // Delete user review
   describe("Delete user review", () => {
-    it("should delete product review successfully", async (done) => {
+    it("should delete product review successfully", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -327,11 +314,9 @@ describe("Product model", () => {
       expect(savedProduct.rating).toBe(3);
       expect(savedProduct.reviews[0].user).toBe(oldReview.user);
       expect(savedProduct.reviews[0].rating).toBe(oldReview.rating);
-
-      done();
     });
 
-    it("should delete product review, then return right value for rating and numReview", async (done) => {
+    it("should delete product review, then return right value for rating and numReview", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -352,10 +337,8 @@ describe("Product model", () => {
       expect(savedProduct.numReviews).toBe(0);
       expect(savedProduct.rating).toBe(0);
       expect(savedProduct.reviews.length).toBe(0);
-
-      done();
     });
-    it("should throw an error", async (done) => {
+    it("should throw an error", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -387,8 +370,6 @@ describe("Product model", () => {
       expect(savedProduct.numReviews).toBe(1);
       expect(savedProduct.rating).toBe(review.rating);
       expect(savedProduct.reviews.length).toBe(1);
-
-      done();
     });
   });
 });

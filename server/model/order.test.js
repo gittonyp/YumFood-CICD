@@ -78,7 +78,7 @@ afterAll(async () => {
  * Order model
  */
 describe("Order model", () => {
-  it("create & save order successfully", async (done) => {
+  it("create & save order successfully", async () => {
     const validUser = new User(userData);
     await validUser.setPassword(userData.password);
     const savedUser = await validUser.save();
@@ -91,7 +91,6 @@ describe("Order model", () => {
     expect(savedOrder.product).toBe(orderData.product);
     expect(savedOrder.shippingPrice).toBe(orderData.shippingPrice);
     expect(savedOrder.user).toBeDefined();
-    done();
   });
 
   // You shouldn't be able to add in any field that isn't defined in the schema
@@ -125,7 +124,7 @@ describe("Order model", () => {
   });
 
   describe("Add order", () => {
-    it("should create and add order item to order successfully", async (done) => {
+    it("should create and add order item to order successfully", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -144,11 +143,9 @@ describe("Order model", () => {
       expect(savedOrder.totalPrice).toBe(
         expectedPrice + orderData.shippingPrice
       );
-
-      done();
     });
 
-    it("should create, add order item and get right prices of order successfully", async (done) => {
+    it("should create, add order item and get right prices of order successfully", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -184,10 +181,9 @@ describe("Order model", () => {
       expect(savedOrder.totalPrice).toBe(
         expectedPrice + orderData.shippingPrice
       );
-      done();
     });
 
-    it("should assign order item quantity to be 1 if not provided", async (done) => {
+    it("should assign order item quantity to be 1 if not provided", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -207,10 +203,9 @@ describe("Order model", () => {
       expect(savedOrder.totalPrice).toBe(
         expectedPrice + orderData.shippingPrice
       );
-      done();
     });
 
-    it("should throw error for invalid product in order", async (done) => {
+    it("should throw error for invalid product in order", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -230,10 +225,9 @@ describe("Order model", () => {
       }
       expect(err).toBeInstanceOf(CustomException);
       expect(err.message).toBeDefined();
-      done();
     });
 
-    it("should throw error for duplicate product in order", async (done) => {
+    it("should throw error for duplicate product in order", async () => {
       const validUser = new User(userData);
       await validUser.setPassword(userData.password);
       const savedUser = await validUser.save();
@@ -258,7 +252,6 @@ describe("Order model", () => {
       }
       expect(err).toBeInstanceOf(CustomException);
       expect(err.message).toBeDefined();
-      done();
     });
   });
 });

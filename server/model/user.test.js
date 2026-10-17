@@ -26,7 +26,7 @@ afterAll(async () => {
  * User model
  */
 describe("User model", () => {
-  it("create & save user successfully", async (done) => {
+  it("create & save user successfully", async () => {
     const validUser = new User(userData);
     await validUser.setPassword(userData.password);
     const savedUser = await validUser.save();
@@ -35,7 +35,6 @@ describe("User model", () => {
     expect(savedUser.email).toBe(userData.email);
     expect(savedUser.phone).toBe(userData.phone);
     expect(savedUser.salt).toBeDefined();
-    done();
   });
 
   // You shouldn't be able to add in any field that isn't defined in the schema
