@@ -1,5 +1,5 @@
 {
-  "name": "yum-food",
+  "name": "yumfood-cicd",
   "version": "1.0.0",
   "description": "An online food ordering application built using the Test Driven Development approach with the MERN stack",
   "main": "index.js",
