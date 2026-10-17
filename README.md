@@ -5,11 +5,7 @@
   Yum Foods
   <br>
 </h1>
-
-<h4 align="center"><a href="https://yum-food.herokuapp.com/" target="_blank">Yum-food,</a> is an online food ordering application .</h4>
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://travis-ci.com/chyke007/Yum-food.svg?branch=master)](https://travis-ci.com/chyke007/Yum-food) [![Coverage Status](https://coveralls.io/repos/github/chyke007/Yum-food/badge.svg?branch=master)](https://coveralls.io/github/chyke007/Yum-food?branch=master)
-
+ 
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
@@ -76,24 +72,3 @@ This application uses the following open source packages:
 - [Jest](https://jestjs.io/)
 - [Coveralls](https://coveralls.io/)
 - [Travisci](https://travis-ci.org/)
-
-## Support
-
-<a href="https://www.patreon.com/chyke007">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
-## You may also like...
-
-- [PC](https://github.com/chyke007/pc) - A Project crashing software for project management
-- [Cinema](https://github.com/chyke007/cinemaapp) - A cinema app
-
-## License
-
-MIT
-
----
-
-> [chibuikenwa.com](https://www.chibuikenwa.com) &nbsp;&middot;&nbsp;
-> GitHub [@chyke007](https://github.com/chyke007) &nbsp;&middot;&nbsp;
-> LinkedIn [@chibuikenwachukwu](https://linkedin.com/in/chibuikenwachukwu)
