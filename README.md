@@ -5,7 +5,9 @@
   Yum Foods
   <br>
 </h1>
- 
+
+[![CI/CD Pipeline](https://github.com/gittonyp/YumFood-CICD/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/gittonyp/YumFood-CICD/actions/workflows/ci-cd.yml)
+
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
@@ -13,6 +15,23 @@
   <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
+
+## CI/CD Pipeline (FA2 Activity)
+
+This repository is used for the FA2 skill-based activity — *Design and Demonstrate a Simple CI/CD Pipeline for an Agile Project*.
+
+**Team:** Tony Prajapati (123B1F079) · Pratik Rajput (123B1F135)
+
+The GitHub Actions pipeline (`.github/workflows/ci-cd.yml`) runs on every push and pull request:
+
+1. **Build** — `node scripts/build.js` assembles the static site into `dist/` and uploads it as an artifact
+2. **Automated Testing** — `node --test web/*.test.js` runs the unit tests for the ordering logic
+3. **Code Quality Check** — ESLint (`eslint:recommended`) validates the source
+4. **Deployment** — after all gates pass on `main`, the built site is published to GitHub Pages
+
+- **Live deployment:** https://gittonyp.github.io/YumFood-CICD/
+- **Demo page source:** `web/` (online food ordering menu + cart demo)
+- **Agile project plan:** [docs/Agile-Project-Plan.md](docs/Agile-Project-Plan.md)
 
 ## Key Features
 

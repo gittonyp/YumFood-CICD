@@ -175,7 +175,7 @@ quality gate for the Definition of Done:
 | Stage | Tooling | Gate behaviour |
 |-------|---------|----------------|
 | **GitHub (source)** | Feature branches, pull requests, protected `main` | Pipeline triggers on every push and PR |
-| **Build** | `actions/checkout`, `actions/setup-node`, `npm ci`, frontend build | Fails if dependencies or build break |
-| **Automated Testing** | Jest + Supertest with `mongodb-memory-server` (no external DB) | Fails if any unit / integration test fails |
-| **Code Quality Check** | ESLint | Fails on lint errors |
-| **Deployment** | Automated publish of the built application only after all previous stages pass on `main` | Artifact / service is updated automatically |
+| **Build** | Node build script (`scripts/build.js`) assembling the site into `dist/` | Fails if the build step errors |
+| **Automated Testing** | Node.js built-in test runner (`node --test`) | Fails if any unit test fails |
+| **Code Quality Check** | ESLint (`eslint:recommended`) | Fails on lint errors |
+| **Deployment** | GitHub Pages — `dist/` is published to a live URL only after all gates pass on `main` | Site is updated automatically |

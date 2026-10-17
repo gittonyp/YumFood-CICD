@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YumFood Express — CI/CD Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>YumFood Express</h1>
+    <p class="tagline">
+      Online food ordering demo — this page is built, tested, linted and deployed
+      automatically by the GitHub Actions CI/CD pipeline on every push.
+    </p>
+  </header>
+
+  <main>
+    <section class="menu-section">
+      <h2>Menu</h2>
+      <div id="menu" class="menu-grid"></div>
+    </section>
+
+    <aside class="cart-panel">
+      <h2>Your Cart <span id="cart-count" class="badge">0</span></h2>
+      <ul id="cart"></ul>
+      <div class="totals">
+        <span>Total</span>
+        <strong id="total">&#8377;0.00</strong>
+      </div>
+      <button id="place-order">Place order</button>
+      <p id="order-status" class="status">No order placed yet</p>
+    </aside>
+  </main>
+
+  <footer>
+    <span id="build-info">__BUILD_INFO__</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
