@@ -1,7 +1,7 @@
 {
   "name": "yumfood-cicd",
   "version": "1.0.0",
-  "description": "An online food ordering application built using the Test Driven Development approach with the MERN stack",
+  "description": "YumFood-CICD — MERN online food ordering application with an automated CI/CD pipeline",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -13,13 +13,15 @@
     "lint": "esw . --fix",
     "lint-w": "esw . --fix  -w",
     "test": "jest --setupFiles dotenv/config  --testPathPattern=server",
+    "test:frontend": "jest --setupFiles dotenv/config --selectProjects frontend",
+    "lint:ci": "eslint --no-eslintrc -c .eslintrc.json server frontend/src",
     "integration-test": "jest --setupFiles dotenv/config  --testPathPattern=integration-test",
     "test:watch": "jest  --setupFiles dotenv/config --watchAll",
     "coveralls": "jest  --setupFiles dotenv/config --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chyke007/Yum-food.git"
+    "url": "git+https://github.com/gittonyp/YumFood-CICD.git"
   },
   "keywords": [
     "pace.africa",
@@ -35,9 +37,15 @@
   "author": "Nwachukwu Chibuike",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chyke007/Yum-food/issues"
+    "url": "https://github.com/gittonyp/YumFood-CICD/issues"
   },
-  "homepage": "https://github.com/chyke007/Yum-food#readme",
+  "homepage": "https://github.com/gittonyp/YumFood-CICD#readme",
+  "config": {
+    "mongodbMemoryServer": {
+      "version": "7.0.14",
+      "distro": "ubuntu-22.04"
+    }
+  },
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-syntax-jsx": "^7.12.1",
@@ -45,7 +53,7 @@
     "@babel/preset-react": "^7.12.1",
     "assert": "^2.0.0",
     "async": "^3.2.0",
-    "babel-jest": "^26.5.2",
+    "babel-jest": "^29.7.0",
     "chalk": "^4.1.0",
     "cloudinary": "^1.23.0",
     "cors": "^2.8.5",
@@ -59,9 +67,10 @@
     "express-session": "^1.17.1",
     "faker": "^5.1.0",
     "fs-extra": "^9.0.1",
-    "jest": "^26.4.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "jsonwebtoken": "^8.5.1",
-    "mongodb-memory-server": "^8.13.0",
+    "mongodb-memory-server": "^10.4.3",
     "mongoose": "^5.10.7",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",

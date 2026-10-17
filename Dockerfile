@@ -1,8 +1,8 @@
-FROM node:14
+FROM node:20
 WORKDIR /app
-COPY package.json ./
-RUN npm install 
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund
 COPY . .
-RUN npm run build-frontend
+RUN NODE_OPTIONS=--openssl-legacy-provider npm run build-frontend
 EXPOSE 4000
 CMD ["npm", "start"]

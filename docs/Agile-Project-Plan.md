@@ -2,7 +2,7 @@
 
 **Activity:** FA2 — Skill-Based Activity: Design and Demonstrate a Simple CI/CD Pipeline for an Agile Project
 **Group members:** Tony Prajapati (123B1F079) · Pratik Rajput (123B1F135)
-**Project repository:** [github.com/gittonyp/YumFood-CICD](https://github.com/gittonyp/YumFood-CICD) — based on [chyke007/Yum-food](https://github.com/chyke007/Yum-food)
+**Project repository:** [github.com/gittonyp/YumFood-CICD](https://github.com/gittonyp/YumFood-CICD)
 **Technology stack:** MongoDB · Express · React · Node.js (MERN) · Jest (testing) · ESLint (code quality) · GitHub Actions (CI/CD)
 **Sprint length:** 1 week — a short setup sprint (Sprint 0) followed by two development sprints
 
@@ -32,7 +32,7 @@ the same pipeline that is designed and demonstrated for this FA2 activity.
 | US-05 | As an **administrator**, I want to **add, update and delete menu items**, so that **customers always see the current menu**. | Must | 5 |
 | EN-01 | As the **development team**, I want **automated build, testing, code-quality checks and deployment on every push / pull request**, so that **defects are caught early and every release is reproducible**. | Must (enabler) | 5 |
 
-**Total: 21 story points** (5 user stories + 1 technical enabler).
+**Total: 26 story points** — 21 across the 5 user stories plus 5 for the technical enabler.
 
 ---
 
@@ -47,7 +47,7 @@ the same pipeline that is designed and demonstrated for this FA2 activity.
 
 | Task | Owner |
 |------|-------|
-| Fork the repository, enable GitHub Actions, protect the `main` branch | Both |
+| Set up the project repository, enable GitHub Actions, protect the `main` branch | Both |
 | Add CI workflow skeleton: checkout → install dependencies → build | Member A |
 | Set up the task board (GitHub Projects: To Do / In Progress / In Review / Done) | Member B |
 
