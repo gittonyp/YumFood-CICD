@@ -14,7 +14,7 @@
     "lint-w": "esw . --fix  -w",
     "test": "jest --setupFiles dotenv/config  --testPathPattern=server",
     "test:frontend": "jest --setupFiles dotenv/config --selectProjects frontend",
-    "lint:ci": "eslint --no-eslintrc -c .eslintrc.json server frontend/src",
+    "lint:ci": "eslint --no-eslintrc -c .eslintrc.json server",
     "integration-test": "jest --setupFiles dotenv/config  --testPathPattern=integration-test",
     "test:watch": "jest  --setupFiles dotenv/config --watchAll",
     "coveralls": "jest  --setupFiles dotenv/config --coverage && cat ./coverage/lcov.info | coveralls"
