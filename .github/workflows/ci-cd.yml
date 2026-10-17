@@ -34,9 +34,6 @@ jobs:
             package-lock.json
             frontend/package-lock.json
 
-      - name: Install backend dependencies
-        run: npm ci
-
       - name: Install frontend dependencies
         working-directory: frontend
         run: npm ci
